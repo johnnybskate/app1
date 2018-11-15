@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/sequelize": "^4.27.30",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
     "cors": "^2.8.5",
