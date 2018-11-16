@@ -13,6 +13,7 @@
       v-model="password"
       placeholder="password"/>
     <br>
+    <div class="error" v-html="error" />
       <button @click="register">
         Register
       </button>
@@ -25,7 +26,8 @@ export default {
   data () {
     return {
       email:'',
-      password:''
+      password:'',
+      error: null
     }
   },
   watch:{
@@ -35,23 +37,22 @@ export default {
   },
   methods:{
     async register(){
+      try{
       const response = await AuthenticationService.register({
         emaill:this.email,
         password:this.password
       })
       console.log(response.data)
+      }catch(error){
+        this.error = error.response.data.error
+      }
     }
   }
-  // mounted(){
-  //   setTimeout(() => {
-  //     this.email = 'helloworld'
-  //           console.log('email has changed value')
-
-  //   }, 2000)
-  // }
 }
 </script>
 
 <style scoped>
-
+.error{
+  color:red;
+}
 </style>
