@@ -52,7 +52,6 @@
   <button @click="register" class="btn btn-primary">Submit</button>
   </div>
   </div>
-</div>
 </template>
 
 <script>
