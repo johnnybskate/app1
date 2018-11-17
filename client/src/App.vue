@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <page-header/>
+    <v-app>
+      <page-header/>
+        <main>
+          <v-container fluid>
+            <router-view/>
+          </v-container>
+        </main>
+      </v-app>
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
   </div>
 </template>
 

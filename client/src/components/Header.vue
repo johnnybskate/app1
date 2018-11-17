@@ -2,31 +2,25 @@
   <div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ <v-toolbar fixed>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-title>Title</v-toolbar-title>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Link One</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Three</v-btn>
+    </v-toolbar-items>
+        <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Sign Up</v-btn>
+      <v-btn flat>Log In</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
 
   <v-navigation-drawer
     stateless
     value="true"
-  >
+  style="float:left">
     <v-list>
       <v-list-tile>
         <v-list-tile-action>
