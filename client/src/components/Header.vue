@@ -1,22 +1,40 @@
 <template>
   <div>
- <v-toolbar fixed>
+ <v-toolbar fixed class="blue" dark>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
-    </v-toolbar-items>
+
+    <v-toolbar-title>
+          <v-btn flat dark 
+          class="home"
+          @click = "navigateTo({name:'home'})">Home
+          </v-btn>
+      </v-toolbar-title>
+      
+    <v-toolbar-items>
+          <v-btn flat dark 
+          @click = "navigateTo({name:'documents'})">Documents
+          </v-btn>    
+          </v-toolbar-items>
+
         <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>
-        <router-link to="register">
-        Sign Up
-        </router-link>
-        </v-btn>
-      <v-btn flat>Log In</v-btn>
-    </v-toolbar-items>
+
+      <v-toolbar-items>
+          <v-btn 
+          flat 
+          dark
+          router
+          to="register"
+          >Sign Up</v-btn>
+      </v-toolbar-items>
+ 
+      <v-toolbar-items>
+          <v-btn 
+          flat 
+          dark
+          router
+          to="login"
+          >Log in</v-btn>
+      </v-toolbar-items>
   </v-toolbar>
 
   <v-navigation-drawer
@@ -83,12 +101,16 @@
     </v-list>
   </v-navigation-drawer>
 
-
   </div>
 </template>
 
 <script>
   export default {
+    methods:{
+      navigateTo(route){
+        this.$router.push(route)
+      }
+    },
     data: () => ({
       admins: [
         ['Management', 'people_outline'],
@@ -105,5 +127,7 @@
 </script>
 
 <style scoped>
-
+.home{
+  cursor:pointer;
+}
 </style>
