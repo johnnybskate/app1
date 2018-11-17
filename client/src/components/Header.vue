@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
  <v-toolbar fixed>
     <v-toolbar-side-icon></v-toolbar-side-icon>
     <v-toolbar-title>Title</v-toolbar-title>
