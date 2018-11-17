@@ -10,7 +10,11 @@
     </v-toolbar-items>
         <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Sign Up</v-btn>
+      <v-btn flat>
+        <router-link to="register">
+        Sign Up
+        </router-link>
+        </v-btn>
       <v-btn flat>Log In</v-btn>
     </v-toolbar-items>
   </v-toolbar>

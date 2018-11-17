@@ -1,7 +1,7 @@
 <template>
   <div>
 
-  <v-layout row>
+  <v-layout row class="float:right">
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-toolbar color="light-blue" dark>
