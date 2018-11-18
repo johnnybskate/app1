@@ -6,7 +6,7 @@
     <v-container fill-height>
       <v-layout align-center>
         <v-flex>
-          <h3 class="display-3">Welcome to the site</h3>
+          <h3 class="display-3">Welcome to the site!</h3>
 
           <span class="subheading">Please register with your information below.</span>
 
@@ -64,6 +64,7 @@
       </v-layout>
     </v-container>
   </v-form>
+          <!-- <div class="error" v-html="error" /> -->
             <v-btn
               dark
               class="blue"

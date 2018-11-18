@@ -36,6 +36,7 @@
                 </v-container>
               </v-form>
               <!-- submit button -->
+              <!-- <div class="error" v-html="error" /> -->
               <v-btn
                 dark
                 class="blue"
@@ -58,11 +59,13 @@ export default {
     return {
       email:'',
       emailRules: [
-        v => !!v || 'E-mail is required',       
+        v => !!v || 'E-mail is required',
+        v => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(v) || 'E-mail must be valid'
       ],
       password:'',
       pwRules: [
         v => !!v || 'Password is required',
+        v => v.length >= 8 || 'Password must mores than 8 characters'
       ],
       error: null
     }

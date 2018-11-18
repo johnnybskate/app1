@@ -9,12 +9,23 @@
           @click = "navigateTo({name:'home'})">Home
           </v-btn>
       </v-toolbar-title>
-      
-    <v-toolbar-items>
-          <v-btn flat dark 
-          @click = "navigateTo({name:'documents'})">Documents
-          </v-btn>    
-          </v-toolbar-items>
+        <!-- <v-toolbar-title>
+          <v-btn 
+          flat 
+          dark
+          router
+          to="home">Home
+          </v-btn>
+      </v-toolbar-title> -->
+
+        <v-toolbar-items>
+          <v-btn 
+          flat 
+          dark
+          router
+          to="documents"
+          >Documents</v-btn>
+      </v-toolbar-items>
 
         <v-spacer></v-spacer>
 
