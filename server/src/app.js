@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}));
 
 require('./routes')(app)
 
-// sequelize.sync({force:true}) delete all tables
+//sequelize.sync({force:true}) //delete all tables
 sequelize.sync()
     .then(()=>{
         app.listen(config.port)

@@ -13,8 +13,6 @@
           <v-divider class="my-3"></v-divider>
 
 <!-- stuff -->
-
-
  <v-form v-model="valid">
     <v-container>
       <v-layout row wrap>
@@ -79,13 +77,6 @@
       </v-layout>
     </v-container>
   </v-jumbotron>
-
-
-
-
- 
-
-
 </div>
 </template>
 
@@ -126,7 +117,7 @@ export default {
     async register(){
       try{
       const response = await AuthenticationService.register({
-        emaill:this.email,
+        email:this.email,
         password:this.password
       })
       console.log(response.data)
