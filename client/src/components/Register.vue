@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
   <v-jumbotron>
     <v-container fill-height>
       <v-layout align-center>

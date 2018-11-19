@@ -12,6 +12,7 @@ module.exports = {
   async register (req, res) {
     try {
       const user = await User.create(req.body)
+
       const userJson = user.toJSON()
       res.send({
         user: userJson,
@@ -37,7 +38,7 @@ module.exports = {
         })
       }
       
-      const isPasswordValid = password === user.password
+      const isPasswordValid = await user.comparePassword(password)
       if (!isPasswordValid) {
         return res.status(403).send({
           error: 'The login information was incorrect'
