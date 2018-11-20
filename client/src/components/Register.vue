@@ -1,6 +1,6 @@
 <template>
   <div>
-  <v-jumbotron>
+  <v-responsive>
     <v-container fill-height>
       <v-layout align-center>
         <v-flex>
@@ -11,7 +11,7 @@
           <v-divider class="my-3"></v-divider>
 
 <!-- stuff -->
- <v-form v-model="valid" name="app" autocomplete="off">
+ <v-form name="app" autocomplete="off">
     <v-container>
       <v-layout row wrap>
 
@@ -76,7 +76,7 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </v-jumbotron>
+  </v-responsive>
 </div>
 </template>
 
@@ -116,10 +116,12 @@ export default {
   methods:{
     async register(){
       try{
-      const response = await AuthenticationService.register({
-        email:this.email,
+      const response = await AuthenticationService.login({
+        emaill:this.email,
         password:this.password
       })
+      this.$store.dispatch('setToken',response.data.token)
+      this.$store.dispatch('setUser',response.data.user)
       console.log(response.data)
       }catch(error){
         this.error = error.response.data.error

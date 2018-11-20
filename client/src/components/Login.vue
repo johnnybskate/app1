@@ -1,6 +1,6 @@
 <template>
   <div>
-  <v-jumbotron>
+  <v-responsive>
     <v-container fill-height>
       <v-layout align-center>
         <v-flex>
@@ -8,7 +8,7 @@
           <span class="subheading">Please log in with your information below.</span>
           <v-divider class="my-3"></v-divider>
             <!-- stuff -->
-            <v-form v-model="valid">
+            <v-form name ="app" autocomplete="on">
                 <v-container>
                   <v-layout row wrap>
             <!-- Email -->
@@ -49,7 +49,7 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </v-jumbotron>
+  </v-responsive>
 </div>
 </template>
 
@@ -75,9 +75,11 @@ export default {
     async login(){
       try{
       const response = await AuthenticationService.login({
-        emaill:this.email,
+        email:this.email,
         password:this.password
       })
+      this.$store.dispatch('setToken',response.data.token)
+      this.$store.dispatch('setUser',response.data.user)
       }catch(error){
         this.error = error.response.data.error
       }

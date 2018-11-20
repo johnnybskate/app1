@@ -30,16 +30,25 @@
         <v-spacer></v-spacer>
 
       <v-toolbar-items>
-          <v-btn 
+          <v-btn
+          v-if="!$store.state.isUserLoggedIn" 
           flat 
           dark
           router
           to="register"
           >Sign Up</v-btn>
+          <v-btn
+          v-if="$store.state.isUserLoggedIn" 
+          flat 
+          dark
+          router
+          to="logout"
+          >Log out</v-btn>
       </v-toolbar-items>
  
       <v-toolbar-items>
           <v-btn 
+          v-if="!$store.state.isUserLoggedIn"
           flat 
           dark
           router
@@ -120,6 +129,13 @@
     methods:{
       navigateTo(route){
         this.$router.push(route)
+      },
+      logout(){
+        this.$store.dispatch('setToken',null)
+        this.$store.dispatch('setUser',null)
+        this.$router.push({
+          name:'home'
+        })
       }
     },
     data: () => ({
