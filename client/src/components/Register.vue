@@ -113,7 +113,10 @@ export default {
       try{
       const response = await AuthenticationService.register({
         email:this.email,
-        password:this.password
+        password:this.password,
+        fName:this.fName,
+        lName:this.lName
+        
       })
       this.$store.dispatch('setToken',response.data.token)
       this.$store.dispatch('setUser',response.data.user)
