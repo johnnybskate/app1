@@ -11,7 +11,7 @@
           <v-divider class="my-3"></v-divider>
 
 <!-- stuff -->
- <v-form v-model="valid">
+ <v-form v-model="valid" name="app" autocomplete="off">
     <v-container>
       <v-layout row wrap>
 
@@ -51,8 +51,10 @@
               <v-text-field
                 label="Password"
                 v-model="password"
+                type="password"
                 :rules="pwRules"
                 :counter="8"
+                aria-autocomplete="new-password"
                 single-line
                 outline
               ></v-text-field>
@@ -95,11 +97,11 @@ export default {
         v => !!v || 'Password is required',
         v => v.length >= 8 || 'Password must mores than 8 characters'
       ],
-      firstName:'',
+      fName:'',
       fnRules: [
         v => !!v || 'First name is required',        
       ],
-      lastName:'',
+      lName:'',
       lnRules: [
         v => !!v || 'Last name is required',        
       ],

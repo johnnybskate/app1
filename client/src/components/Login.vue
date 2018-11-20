@@ -26,6 +26,7 @@
                           <v-text-field
                             label="Password"
                             v-model="password"
+                            type="password"
                             :rules="pwRules"
                             :counter="8"
                             single-line
