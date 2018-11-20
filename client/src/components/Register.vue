@@ -108,11 +108,6 @@ export default {
       error: null
     }
   },
-  watch:{
-    email(value){
-      console.log('email has changed value',value)
-    }
-  },
   methods:{
     async register(){
       try{

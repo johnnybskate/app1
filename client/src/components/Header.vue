@@ -2,21 +2,16 @@
   <div>
  <v-toolbar fixed class="blue" dark>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-
-    <v-toolbar-title>
-          <v-btn flat dark 
-          class="home"
-          @click = "navigateTo({name:'home'})">Home
-          </v-btn>
-      </v-toolbar-title>
-        <!-- <v-toolbar-title>
+        <v-toolbar-title>
           <v-btn 
           flat 
           dark
           router
-          to="home">Home
+          :to="{
+            name: 'home'
+          }">Home
           </v-btn>
-      </v-toolbar-title> -->
+      </v-toolbar-title>
 
         <v-toolbar-items>
           <v-btn 
@@ -41,8 +36,7 @@
           v-if="$store.state.isUserLoggedIn" 
           flat 
           dark
-          router
-          to="logout"
+          @click="logout"
           >Log out</v-btn>
       </v-toolbar-items>
  
@@ -57,7 +51,7 @@
       </v-toolbar-items>
   </v-toolbar>
 
-  <v-navigation-drawer
+  <!-- <v-navigation-drawer
     stateless
     value="true"
   style="float:left">
@@ -119,7 +113,7 @@
         </v-list-group>
       </v-list-group>
     </v-list>
-  </v-navigation-drawer>
+  </v-navigation-drawer> -->
 
   </div>
 </template>
