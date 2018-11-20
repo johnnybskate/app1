@@ -1,17 +1,28 @@
 <template>
   <div>
 
-  <v-layout row class="float:right">
+    <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
-        <v-toolbar color="light-blue" dark>
+        <v-toolbar color="light-blue" light extended>
           <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-toolbar-title>My files</v-toolbar-title>
+          <v-btn
+            fab
+            small
+            color="cyan accent-2"
+            bottom
+            left
+            absolute
+            @click="dialog = !dialog"
+          >
+            <v-icon>add</v-icon>
+          </v-btn>
+          <v-toolbar-title slot="extension" class="white--text">My files</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn dark icon>
+          <v-btn icon>
             <v-icon>search</v-icon>
           </v-btn>
-          <v-btn dark icon>
+          <v-btn icon>
             <v-icon>view_module</v-icon>
           </v-btn>
         </v-toolbar>
@@ -33,7 +44,7 @@
           </v-list-tile>
           <v-divider inset></v-divider>
           <v-subheader inset>Files</v-subheader>
-          <v-list-tile v-for="item in items2" :key="item.title" @click="">
+          <v-list-tile v-for="item in items2" :key="item.title" avatar @click="">
             <v-list-tile-avatar>
               <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
             </v-list-tile-avatar>
@@ -42,12 +53,24 @@
               <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
             </v-list-tile-content>
             <v-list-tile-action>
-              <v-btn icon>
+              <v-btn icon ripple>
                 <v-icon color="grey lighten-1">info</v-icon>
               </v-btn>
             </v-list-tile-action>
           </v-list-tile>
         </v-list>
+        <v-dialog v-model="dialog" max-width="500px">
+          <v-card>
+            <v-card-text>
+              <v-text-field label="File name"></v-text-field>
+              <small class="grey--text">* This doesn't actually save.</small>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn flat color="primary" @click="dialog = false">Submit</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </v-card>
     </v-flex>
   </v-layout>
@@ -57,6 +80,7 @@
   export default {
     data () {
       return {
+        dialog: false,
         items: [
           { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Photos', subtitle: 'Jan 9, 2014' },
           { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Recipes', subtitle: 'Jan 17, 2014' },
