@@ -13,8 +13,8 @@ app.use(express.urlencoded({extended: true}));
 
 require('./routes')(app)
 
-//sequelize.sync({force:true}) //delete all tables
-sequelize.sync()
+sequelize.sync({force:false}) //delete all tables
+//sequelize.sync()
     .then(()=>{
         app.listen(config.port)
         console.log(`Server started on port ${config.port}`)

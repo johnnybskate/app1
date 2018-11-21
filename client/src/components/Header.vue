@@ -1,6 +1,5 @@
 <template>
   <div>
-
 <v-toolbar fixed class="blue" dark>
     <v-toolbar-side-icon>
 
@@ -11,6 +10,7 @@
           flat 
           dark
           router
+          grow
           :to="{
             name: 'home'
           }">Home
@@ -20,13 +20,39 @@
           flat 
           dark
           router
+          v-if="$store.state.isUserLoggedIn" 
           to="documents"
           >Documents</v-btn>
+
+          <!-- Explore button -->
+          <v-btn 
+          flat 
+          dark
+          router
+          to="documents"
+          >Explore</v-btn>
       </v-toolbar-items>
 
-        <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
 
       <v-toolbar-items>
+      <v-text-field
+        append-icon="mic"
+        class="mx-3"
+        flat
+        label="Search"
+        prepend-inner-icon="search"
+        solo-inverted
+        style="margin-top:7px"
+      ></v-text-field>
+            <!-- profile button -->
+          <v-btn 
+          flat 
+          dark
+          router
+          v-if="$store.state.isUserLoggedIn" 
+          to="documents"
+          >My Profile</v-btn>
           <!-- sign up button -->
           <v-btn
           v-if="!$store.state.isUserLoggedIn" 

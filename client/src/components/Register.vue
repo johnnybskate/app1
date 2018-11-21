@@ -1,7 +1,5 @@
 <template>
   <div>
-  <v-responsive>
-    <v-container fill-height>
       <v-layout align-center>
         <v-flex>
           <h3 class="display-3">Welcome to the site!</h3>
@@ -62,10 +60,10 @@
       </v-layout>
     </v-container>
   </v-form>
-          <!-- <div class="error" v-html="error" /> -->
+          <div class="error" v-html="error" /> 
             <v-btn
               dark
-              class="blue"
+              class="blue float-right"
               style="border-radius: 10px"
               @click="register">
               Register
@@ -75,8 +73,6 @@
 
         </v-flex>
       </v-layout>
-    </v-container>
-  </v-responsive>
 </div>
 </template>
 
@@ -120,6 +116,9 @@ export default {
       })
       this.$store.dispatch('setToken',response.data.token)
       this.$store.dispatch('setUser',response.data.user)
+      this.$router.push({
+          name:'home'
+        })
       console.log(response.data)
       }catch(error){
         this.error = error.response.data.error
@@ -131,6 +130,8 @@ export default {
 
 <style scoped>
 .error{
-  color:red;
+    color:black;
+  font-size:1.5em;
+  border-radius: 10px;
 }
 </style>

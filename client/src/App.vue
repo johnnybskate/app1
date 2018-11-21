@@ -8,16 +8,18 @@
           </v-container>
         </main>
       </v-app>
-    <!-- <img src="./assets/logo.png"> -->
+      <page-footer/>
   </div>
 </template>
 
 <script>
 import PageHeader from '@/components/Header.vue'
+import PageFooter from '@/components/Footer.vue'
 export default {
   name: 'app',
   components:{
-    PageHeader
+    PageHeader,
+    PageFooter
   }
 }
 </script>
@@ -27,7 +29,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
   padding: 50px;

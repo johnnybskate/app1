@@ -1,98 +1,181 @@
 <template>
   <div>
 
-    <v-layout row>
+
+
+    <v-toolbar
+      color="blue"
+      dark
+      tabs
+    >
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+
+      <v-toolbar-title>Schools</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>search</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>more_vert</v-icon>
+      </v-btn>
+
+      <v-tabs
+        slot="extension"
+        v-model="tab"
+        color="blue"
+        flat
+        grow
+      >
+        <v-tabs-slider color="yellow"></v-tabs-slider>
+
+        <v-tab>
+        Schools        
+        </v-tab>
+
+        <v-tab>
+        Classes        
+        </v-tab>
+        <v-tab>
+        Tests        
+        </v-tab>
+        <v-tab>
+        Quizzes        
+        </v-tab>
+        <v-tab>
+        HWs        
+        </v-tab>
+        <v-tab>
+        Study Guides        
+        </v-tab>
+      </v-tabs>
+    </v-toolbar>
+
+
+
+
+
+
+  <div v-for="school in schools" :key="school.id">
+  <v-layout row style="padding:10px ">
     <v-flex xs12 sm6 offset-sm3>
-      <v-card>
-        <v-toolbar color="light-blue" light extended>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-btn
-            fab
-            small
-            color="cyan accent-2"
-            bottom
-            left
-            absolute
-            @click="dialog = !dialog"
-          >
-            <v-icon>add</v-icon>
-          </v-btn>
-          <v-toolbar-title slot="extension" class="white--text">My files</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>search</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon>view_module</v-icon>
-          </v-btn>
-        </v-toolbar>
-        <v-list two-line subheader>
-          <v-subheader inset>Folders</v-subheader>
-          <v-list-tile v-for="item in items" :key="item.title" avatar @click="">
-            <v-list-tile-avatar>
-              <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
-            </v-list-tile-avatar>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
-            </v-list-tile-content>
-            <v-list-tile-action>
-              <v-btn icon>
-                <v-icon color="grey lighten-1">info</v-icon>
-              </v-btn>
-            </v-list-tile-action>
-          </v-list-tile>
-          <v-divider inset></v-divider>
-          <v-subheader inset>Files</v-subheader>
-          <v-list-tile v-for="item in items2" :key="item.title" avatar @click="">
-            <v-list-tile-avatar>
-              <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
-            </v-list-tile-avatar>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
-            </v-list-tile-content>
-            <v-list-tile-action>
-              <v-btn icon ripple>
-                <v-icon color="grey lighten-1">info</v-icon>
-              </v-btn>
-            </v-list-tile-action>
-          </v-list-tile>
-        </v-list>
-        <v-dialog v-model="dialog" max-width="500px">
-          <v-card>
-            <v-card-text>
-              <v-text-field label="File name"></v-text-field>
-              <small class="grey--text">* This doesn't actually save.</small>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn flat color="primary" @click="dialog = false">Submit</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
+      <v-card style="border-radius:15px">
+
+
+
+    <v-toolbar
+      color="blue"
+      dark
+      tabs
+    >
+
+      <v-toolbar-title>{{school.name}}</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>search</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>more_vert</v-icon>
+      </v-btn>
+
+      <v-tabs
+        slot="extension"
+        v-model="tab"
+        color="blue"
+        flat
+        grow
+      >
+        <v-tabs-slider color="yellow"></v-tabs-slider>
+
+        <v-tab>
+        Classes        
+        </v-tab>
+        <v-tab>
+        Tests        
+        </v-tab>
+        <v-tab>
+        Quizzes        
+        </v-tab>
+        <v-tab>
+        HWs        
+        </v-tab>
+        <v-tab>
+        Study Guides        
+        </v-tab>
+      </v-tabs>
+    </v-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div style="padding:10px">
+            <h3 style="text-decoration:underline">School</h3>
+              <h1>{{"- "+school.name}}</h1>
+            <v-divider class="my-1"></v-divider>
+            
+            <h3 style="text-decoration:underline">Classes</h3>
+              <h1>{{"- "+school.classes}}</h1>
+            <v-divider class="my-1"></v-divider>
+
+            <h3 style="text-decoration:underline">GPA</h3>
+              <h1>{{"- "+school.gpa}}</h1>
+            <v-divider class="my-1"></v-divider>
+
+            <h3 style="text-decoration:underline">Form</h3>
+              <h1>{{"- "+school.form}}</h1>
+          </div>
       </v-card>
     </v-flex>
   </v-layout>
+</div>
+
+
+
+           <!-- {{school}} -->
+            <!-- <v-card>
+            {{"School: "+school.name}}<br />
+            {{"Classes: "+school.classes}}<br />
+            {{"GPA: "+school.gpa}}<br />
+            {{"Form: "+school.form}}<br />
+            </v-card> -->
+
+
+
+
+
+
   </div>
 </template>
 <script>
-  export default {
-    data () {
-      return {
-        dialog: false,
-        items: [
-          { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Photos', subtitle: 'Jan 9, 2014' },
-          { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Recipes', subtitle: 'Jan 17, 2014' },
-          { icon: 'folder', iconClass: 'grey lighten-1 white--text', title: 'Work', subtitle: 'Jan 28, 2014' }
-        ],
-        items2: [
-          { icon: 'assignment', iconClass: 'blue white--text', title: 'Vacation itinerary', subtitle: 'Jan 20, 2014' },
-          { icon: 'call_to_action', iconClass: 'amber white--text', title: 'Kitchen remodel', subtitle: 'Jan 10, 2014' }
-        ]
-      }
+import SchoolsService from '@/services/SchoolsService'
+export default {
+  data(){
+    return {
+    schools:null
     }
+  },
+  async mounted(){
+    this.schools = (await SchoolsService.index()).data
+
+    
   }
+}
 </script>
 
 <style scoped>

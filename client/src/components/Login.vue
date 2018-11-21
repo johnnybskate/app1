@@ -1,7 +1,6 @@
 <template>
   <div>
-  <v-responsive>
-    <v-container fill-height>
+  
       <v-layout align-center>
         <v-flex>
           <h3 class="display-3">Welcome to the site</h3>
@@ -37,19 +36,19 @@
                 </v-container>
               </v-form>
               <!-- submit button -->
-              <!-- <div class="error" v-html="error" /> -->
+      <div class="error" v-html="error" /> 
+
               <v-btn
                 dark
-                class="blue"
+                class="blue float-right"
                 style="border-radius: 10px"
-                @click="login">
+                @click="login"
+                >
                 Log in
               </v-btn>
             <!-- stuff -->
         </v-flex>
       </v-layout>
-    </v-container>
-  </v-responsive>
 </div>
 </template>
 
@@ -76,10 +75,14 @@ export default {
       try{
       const response = await AuthenticationService.login({
         email:this.email,
-        password:this.password
+        password:this.password,
+       
       })
       this.$store.dispatch('setToken',response.data.token)
       this.$store.dispatch('setUser',response.data.user)
+       this.$router.push({
+          name:'home'
+        })
       }catch(error){
         this.error = error.response.data.error
       }
@@ -90,6 +93,15 @@ export default {
 
 <style scoped>
 .error{
-  color:red;
+  font-family: "Gill-Sans",sans-serif;
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size:2em;
+  border-radius: 10px;
 }
 </style>
+
+
+
+
+
