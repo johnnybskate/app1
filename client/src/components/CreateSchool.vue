@@ -85,6 +85,9 @@ export default {
     }
   },
   methods:{
+    navigateTo(route){
+        this.$router.push(route)
+      },
     async create(){
       try{
         await SchoolsService.post(this.school)

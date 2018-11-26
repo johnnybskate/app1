@@ -1,5 +1,6 @@
 <template>
   <div>
+
  <!-- <v-layout justify-center> -->
     <v-toolbar
       color="blue"
@@ -14,12 +15,15 @@
         <v-icon>search</v-icon>
       </v-btn>
 
-      <v-btn fab small dark color="yellow" 
-      :to="{
-            name: 'schools-add'
-          }">
-        <v-icon dark>add</v-icon>
-      </v-btn>
+      <router-link :to="{name:'schools-add'}">
+        <v-btn small fab color="yellow" 
+        router
+        :to="{
+              name: 'schools-add'
+            }">
+          <v-icon dark>add</v-icon>
+        </v-btn>
+      </router-link>
 
       <v-btn icon>
         <v-icon>more_vert</v-icon>
@@ -61,6 +65,11 @@ export default {
    async mounted(){
     this.schools = (await SchoolsService.index()).data
   },
+   methods:{
+      navigateTo(route){
+        this.$router.push(route)
+      }
+   },
   props:[
     'title'
   ]

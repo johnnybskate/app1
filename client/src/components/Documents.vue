@@ -20,6 +20,16 @@
         <v-icon>search</v-icon>
       </v-btn>
 
+      <router-link :to="{name:'schools-add'}">
+        <v-btn small fab color="yellow" 
+        router
+        :to="{
+              name: 'school', params:{schoolId:school.id}
+            }">
+          <v-icon dark>add</v-icon>
+        </v-btn>
+      </router-link>
+      
       <v-btn icon>
         <v-icon>more_vert</v-icon>
       </v-btn>
@@ -83,6 +93,9 @@ export default {
     schools:null
     }
   },
+  navigateTo(route){
+        this.$router.push(route)
+      },
   async mounted(){
     this.schools = (await SchoolsService.index()).data
   },
