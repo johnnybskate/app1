@@ -36,7 +36,7 @@
                 </v-container>
               </v-form>
               <!-- submit button -->
-      <div class="error" v-html="error" /> 
+      <div class="danger-alert" v-html="error" /> 
 
               <v-btn
                 dark
@@ -98,6 +98,9 @@ export default {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size:2em;
   border-radius: 10px;
+}
+.danger-alert{
+color:red
 }
 </style>
 

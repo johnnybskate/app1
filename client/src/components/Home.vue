@@ -1,5 +1,6 @@
 <template>
   <div>
+<panel title="Schools" v-if="$store.state.isUserLoggedIn" />
     <h1>Welcome to Lava</h1>
 <h3>The ultimate source for Test, HWs, Quizzes, Studyguides and Projects!</h3>
   <v-carousel hide-controls>
@@ -13,6 +14,8 @@
 </template>
 
 <script>
+import Panel from '@/components/Panel'
+
    export default {
     data () {
       return {
@@ -31,7 +34,10 @@
           }
         ]
       }
-    }
+    },
+  components:{
+    Panel
+  }
   }
 </script>
 

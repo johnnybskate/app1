@@ -1,19 +1,12 @@
 <template>
   <div>
-<v-toolbar fixed class="blue" dark >
+<v-toolbar fixed class="blue" dark>
     <v-toolbar-side-icon>
-    </v-toolbar-side-icon>
 
+    </v-toolbar-side-icon>
     <!-- home button -->
         <v-toolbar-items>
           <v-btn 
-          flat 
-          dark
-          :to="{
-            name: 'home'
-          }">LAVA
-          </v-btn>
-             <v-btn 
           flat 
           dark
           router
@@ -50,6 +43,7 @@
         label="Search"
         prepend-inner-icon="search"
         solo-inverted
+        style="margin-top:7px"
       ></v-text-field>
             <!-- profile button -->
           <v-btn 
@@ -83,7 +77,14 @@
           @click="logout"
           >Log out</v-btn>
       </v-toolbar-items>
+
+
+
   </v-toolbar>
+
+
+ 
+  
   </div>
 </template>
 

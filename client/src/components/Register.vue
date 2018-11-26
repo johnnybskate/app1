@@ -60,7 +60,7 @@
       </v-layout>
     </v-container>
   </v-form>
-          <div class="error" v-html="error" /> 
+          <div class="darnger-alert" v-html="error" /> 
             <v-btn
               dark
               class="blue float-right"
@@ -133,5 +133,8 @@ export default {
     color:black;
   font-size:1.5em;
   border-radius: 10px;
+}
+.danger-alert{
+color:red
 }
 </style>
