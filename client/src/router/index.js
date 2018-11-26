@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 import Documents from '@/components/Documents'
 import Login from '@/components/Login'
 import CreateSchool from '@/components/CreateSchool'
+import ViewSchool from '@/components/ViewSchool'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/schools/add',
       name: 'schools-add',
       component: CreateSchool
+    },
+    {
+      path: '/schools/:schoolId',
+      name: 'school',
+      component: ViewSchool
     }
   ]
 })

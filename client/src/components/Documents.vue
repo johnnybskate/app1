@@ -14,6 +14,14 @@
       <v-btn icon>
         <v-icon>search</v-icon>
       </v-btn>
+
+      <v-btn fab small dark color="yellow" 
+      :to="{
+            name: 'schools-add'
+          }">
+        <v-icon dark>add</v-icon>
+      </v-btn>
+
       <v-btn icon>
         <v-icon>more_vert</v-icon>
       </v-btn>
@@ -47,6 +55,17 @@
     >
 
       <v-toolbar-title>{{school.name}}</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn fab dark small color="cyan"
+      :to="{
+            name: 'school',
+            params:{
+              schoolId:school.id
+            }
+          }">
+      <v-icon dark>edit</v-icon>
+    </v-btn>
+
 
 
       <v-tabs

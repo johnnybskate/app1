@@ -17,8 +17,6 @@ const hashPassword = (user, options) => {
       return user.setDataValue('password', hash)
     })
 }
-
-
 module.exports = (sequelize, DataTypes) => {
  const User = sequelize.define('User', {
       email: {
