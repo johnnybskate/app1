@@ -15,6 +15,17 @@ module.exports = {
       console.log(err);
     }
   },
+  async show (req, res) {
+    try {
+      const school = await School.findById(req.params.schoolId)
+       res.send(school)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occured'
+      });
+      console.log(err);
+    }
+  },
   async post (req, res) {
     try {
       const school = await School.create(req.body)

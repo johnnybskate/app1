@@ -15,7 +15,6 @@
         <v-icon>search</v-icon>
       </v-btn>
 
-      <router-link :to="{name:'schools-add'}">
         <v-btn small fab color="yellow" 
         router
         :to="{
@@ -23,7 +22,6 @@
             }">
           <v-icon dark>add</v-icon>
         </v-btn>
-      </router-link>
 
       <v-btn icon>
         <v-icon>more_vert</v-icon>
@@ -33,11 +31,13 @@
         slot="extension"
         v-model="tab"
         color="blue"
+        grow
         flat
       >
         <v-tabs-slider color="yellow"></v-tabs-slider>
         <div v-for="school in schools" :key="school.id">
         <v-tab
+        grow
         :to="{
             name: 'home'
           }"

@@ -7,5 +7,8 @@ export default{
     },
     post (school) {
         return Api().post('schools',school)
+    },
+    show(schoolId){
+        return Api().get(`schools/${schoolId}`)
     }
 }

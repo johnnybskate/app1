@@ -26,10 +26,10 @@
         :to="{
               name: 'school', params:{schoolId:school.id}
             }">
-          <v-icon dark>add</v-icon>
+          <v-icon dark>edit</v-icon>
         </v-btn>
       </router-link>
-      
+
       <v-btn icon>
         <v-icon>more_vert</v-icon>
       </v-btn>

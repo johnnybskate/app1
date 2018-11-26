@@ -10,7 +10,11 @@ module.exports = (app) => {
   AuthenticationController.login)
 
   app.get('/schools',
-  SchoolsController.index)  
+  SchoolsController.index) 
+   
+  app.get('/schools/:schoolId',
+  SchoolsController.show) 
+
   app.post('/schools',
   SchoolsController.post)
 }
