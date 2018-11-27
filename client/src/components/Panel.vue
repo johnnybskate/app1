@@ -36,14 +36,18 @@
       >
         <v-tabs-slider color="yellow"></v-tabs-slider>
         <div v-for="school in schools" :key="school.id">
-        <v-tab
-        grow
+        <!-- <router-link :to="{ name: 'school', params:{schoolId:school.id}}"> -->
+                   <!-- name: 'school', params(){return {schoolId:school.id}} -->
+<v-tab
+        router
         :to="{
-            name: 'home'
-          }"
+              name: 'school', params:{schoolId:school.id}
+            }"
           style="margin:10px">
         {{school.name}}        
         </v-tab>
+              <!-- </router-link> -->
+
         </div>
       </v-tabs>
     </v-toolbar>

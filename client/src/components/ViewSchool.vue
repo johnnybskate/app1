@@ -12,7 +12,7 @@
     >
       <v-toolbar-title>{{school.name}}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn fab dark small color="cyan"
+      <v-btn fab dark small color="yellow"
       :to="{
             name: 'school',
             params:{

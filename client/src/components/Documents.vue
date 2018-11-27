@@ -6,7 +6,6 @@
   <v-layout row style="padding:10px ">
     <v-flex xs12 sm6 offset-sm3>
       <v-card style="border-radius:15px">
-
     <v-toolbar
       color="blue"
       dark
@@ -20,15 +19,14 @@
         <v-icon>search</v-icon>
       </v-btn>
 
-      <router-link :to="{name:'schools-add'}">
-        <v-btn small fab color="yellow" 
+      <!-- <router-link :to="{name:'schools-add'}"> -->
+        <v-btn depressed small color="yellow" 
         router
         :to="{
               name: 'school', params:{schoolId:school.id}
             }">
-          <v-icon dark>edit</v-icon>
-        </v-btn>
-      </router-link>
+View        </v-btn>
+      <!-- </router-link> -->
 
       <v-btn icon>
         <v-icon>more_vert</v-icon>

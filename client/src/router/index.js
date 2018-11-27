@@ -6,6 +6,7 @@ import Documents from '@/components/Documents'
 import Login from '@/components/Login'
 import CreateSchool from '@/components/CreateSchool'
 import ViewSchool from '@/components/ViewSchool'
+import Upload from '@/components/Upload'
 
 Vue.use(Router)
 
@@ -41,6 +42,16 @@ export default new Router({
       path: '/schools/:schoolId',
       name: 'school',
       component: ViewSchool
+    }
+    ,
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload
+    } ,
+    {
+      path: '*',
+      redirect:'home'
     }
   ]
 })

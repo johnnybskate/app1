@@ -6,6 +6,7 @@
     </v-toolbar-side-icon>
     <!-- home button -->
         <v-toolbar-items>
+
           <v-btn 
           flat 
           dark

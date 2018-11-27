@@ -5,7 +5,7 @@ export default{
     index () {
         return Api().get('schools')
     },
-    post (school) {
+    post(school) {
         return Api().post('schools',school)
     },
     show(schoolId){
