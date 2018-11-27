@@ -1,6 +1,6 @@
 <template>
   <div>
-    <panel title="Schools"/>
+    <panel title="Schools" />
 
   <v-layout justify-center row style="padding:10px">
     <v-flex xs12 sm6>
@@ -77,7 +77,7 @@ export default {
 },
   async mounted(){
       const schoolId = this.$store.state.route.params.schoolId
-      this.school = (await SchoolsService.show(songId)).data
+      this.school = (await SchoolsService.show(schoolId)).data
   },
   components:{
     Panel
