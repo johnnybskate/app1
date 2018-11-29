@@ -18,16 +18,14 @@
       >
         {{ link }}
       </v-btn>
-      <v-flex
-        primary
-        lighten-2
+      <v-flex        
         py-3
         text-xs-center
         white--text
         xs12
         style="margin-left:20px;margin-right:20px"
       >
-        &copy;2018 — <strong>Vuetify</strong>
+        &copy;2018 — <strong>Lava</strong>
       </v-flex>
     </v-layout>
   </v-footer>

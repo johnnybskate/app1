@@ -1,4 +1,6 @@
 const {School} = require('../models')
+var formidable = require('formidable');
+var fs = require('fs');
 
 module.exports = {
   async index (req, res) {
@@ -28,7 +30,18 @@ module.exports = {
   },
   async post (req, res) {
     try {
-      const school = await School.create(req.body)
+      const school = await School.create(req.body);
+      var form = new formidable.IncomingForm();
+      form.parse(req, function (err, fields, files) {
+          var oldpath = files.filetoupload.path;
+          var newpath = `path/${school.id}.jpg`;
+          fs.rename(oldpath, newpath, function (err) {
+            if (err) throw err;
+            res.write('File uploaded and moved!');
+            res.end();
+          });
+    });
+
       res.send(school)
     } catch (err) {
       res.status(500).send({

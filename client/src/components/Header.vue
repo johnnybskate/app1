@@ -17,21 +17,29 @@
           }">Home
           </v-btn>
     <!-- documents button -->
-          <v-btn 
+          <!-- <v-btn 
           flat 
           dark
           router
           v-if="$store.state.isUserLoggedIn" 
           to="documents"
-          >Documents</v-btn>
-
-          <!-- Explore button -->
+          >Documents</v-btn> -->
           <v-btn 
           flat 
           dark
           router
           to="documents"
-          >Explore</v-btn>
+          >Documents</v-btn>
+          <!-- Explore button -->
+          <v-btn 
+          flat 
+          dark
+          router
+          grow
+          :to="{
+            name: 'schools-add'
+          }"
+          >Add School</v-btn>
       </v-toolbar-items>
 
       <v-spacer></v-spacer>

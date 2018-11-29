@@ -59,20 +59,16 @@ View        </v-btn>
       </v-tabs>
     </v-toolbar>
           <div style="padding:10px">
-            <h3 style="text-decoration:underline">School</h3>
-              <h1>{{"- "+school.name}}</h1>
-            <v-divider class="my-1"></v-divider>
-            
-            <h3 style="text-decoration:underline">Classes</h3>
-              <h1>{{"- "+school.classes}}</h1>
+            <h4 style="text-decoration:underline">Classes</h4>
+              <p>{{"- "+school.classes}}</p>
             <v-divider class="my-1"></v-divider>
 
-            <h3 style="text-decoration:underline">GPA</h3>
-              <h1>{{"- "+school.gpa}}</h1>
+            <h4 style="text-decoration:underline">GPA</h4>
+              <p>{{"- "+school.gpa}}</p>
             <v-divider class="my-1"></v-divider>
 
-            <h3 style="text-decoration:underline">Form</h3>
-              <h1>{{"- "+school.form}}</h1>
+            <h4 style="text-decoration:underline">Form</h4>
+              <p>{{"- "+school.form}}</p>
           </div>
       </v-card>
     </v-flex>

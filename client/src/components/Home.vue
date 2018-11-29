@@ -21,16 +21,16 @@ import Panel from '@/components/Panel'
       return {
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+            src: 'https://cdn.hipwallpaper.com/i/39/29/kMs8F0.jpg'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+            src: 'https://cdn.hipwallpaper.com/i/71/0/30iTnO.jpg'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+            src:'http://www.technocrazed.com/wp-content/uploads/2015/12/New-York-Wallpaper-Background-6.jpg'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+            src: 'http://www.technocrazed.com/wp-content/uploads/2015/12/New-York-Wallpaper-Background-38.jpg'
           }
         ]
       }
