@@ -18,6 +18,8 @@
                             outline
                             v-model="email"
                             :rules="emailRules"
+                            v-autocomplete
+                            autocomplete="on"
                       ></v-text-field>
                     </v-flex>
             <!-- Passowrd -->
