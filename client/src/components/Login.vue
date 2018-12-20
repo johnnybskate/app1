@@ -13,11 +13,11 @@
             <!-- Email -->
                     <v-flex xs12 sm6>
                       <v-combobox
-          v-model="select"
-          :items="items"
-          outline
-          label="Email"
-        >
+                      v-model="email"
+                      :items="items"
+                      outline
+                      label="Email"
+                    >
                     <v-text-field
                             label="Email"
                             single-line
