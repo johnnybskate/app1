@@ -12,6 +12,12 @@
                   <v-layout row wrap>
             <!-- Email -->
                     <v-flex xs12 sm6>
+                      <v-combobox
+          v-model="select"
+          :items="items"
+          outline
+          label="Email"
+        >
                     <v-text-field
                             label="Email"
                             single-line
@@ -19,8 +25,8 @@
                             v-model="email"
                             :rules="emailRules"
                             v-autocomplete
-                            autocomplete="on"
                       ></v-text-field>
+                      </v-combobox>
                     </v-flex>
             <!-- Passowrd -->
                     <v-flex xs12 sm6>
@@ -69,7 +75,50 @@ export default {
         v => !!v || 'Password is required',
         v => v.length >= 8 || 'Password must mores than 8 characters'
       ],
-      error: null
+      error: null,
+      select: '',
+        items: [
+          'johnnyb7995@gmail.com',
+          'moshep@gmail.com',
+          'alexp@gmail.com',
+          'rondow@yahoo.com',
+          'rasca@icloud.com',
+          'jonadab@live.com',
+          'jdhildeb@att.net',
+          'metzzo@comcast.net',
+          'iamcal@hotmail.com',
+          'kingma@sbcglobal.net',
+          'inico@hotmail.com',
+          'ullman@yahoo.com',
+          'ulllman@yahoo.com',
+          'ullllman@yahoo.com',
+          'benanov@aol.com',
+          'research@verizon.net',
+          'conteb@outlook.com',
+          'madanm@sbcglobal.net',
+          'dunstan@comcast.net',
+          'brickbat@hotmail.com',
+          'qmacro@hotmail.com',
+          'fbriere@aol.com',
+          'munjal@yahoo.com',
+          'andersbr@verizon.net',
+          'cliffski@gmail.com',
+          'satishr@comcast.net',
+          'rgiersig@att.net',
+          'doormat@outlook.com',
+          'goldberg@aol.com',
+          'esasaki@icloud.com',
+          'gknauss@yahoo.com',
+          'ntegrity@comcast.net',
+          'sokol@optonline.net',
+          'papathan@aol.com',
+          'jbailie@hotmail.com',
+          'jmcnamara@outlook.com',
+          'dvdotnet@verizon.net',
+          'choset@me.com',
+          'milton@yahoo.ca',
+          'jimxugle@comcast.net',
+        ]
     }
   },
   methods:{
